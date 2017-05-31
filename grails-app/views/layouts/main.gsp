@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>
-        <g:layoutTitle default="My Events"/>
+        <g:layoutTitle/>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <asset:stylesheet src="bootstrap.css"/>
@@ -16,7 +16,7 @@
 <header>
 
 </header>
-<main><g:layoutBody/></main>
+<main class="container"><g:layoutBody/></main>
 <footer>
 
 </footer>

@@ -8,7 +8,7 @@ class Page {
     String content
 
     static constraints = {
-
+        url unique: true
     }
 
     static mapping = {
