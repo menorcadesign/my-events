@@ -20,7 +20,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-9">
                             <div style="float: right">
                                 <g:link controller="page" action="show" id="${it.id}"
-                                        class="btn btn-primary"><g:message code="page.see"/></g:link>
+                                        class="btn btn-primary"><g:message code="pages.see"/></g:link>
                                 <button class="btn btn-primary" data-toggle="modal"
                                         data-target="#update-page-${it.id}"><g:message
                                         code="pages.update"/></button>
