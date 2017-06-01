@@ -10,4 +10,8 @@ class AdminController {
         [pages: Page.listOrderByMenuOrder(params)]
     }
 
+    def notices() {
+        [notices: Notice.listOrderById(params)]
+    }
+
 }
