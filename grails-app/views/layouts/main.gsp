@@ -1,3 +1,4 @@
+<%@ page import="my.events.Page" %>
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -14,7 +15,27 @@
 </head>
 <body>
 <header>
-
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#mobile" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><g:message code="app.name"/></a>
+            </div>
+            <div class="collapse navbar-collapse" id="mobile">
+                <ul class="nav navbar-nav">
+                    <g:each in="${Page.listOrderByMenuOrder(params as Map)}">
+                        <li><g:link controller="page" action="show" id="${it.id}">${it.h1}</g:link></li>
+                    </g:each>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>
 <main class="container"><g:layoutBody/></main>
 <footer>

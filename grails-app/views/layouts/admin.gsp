@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><g:message code="app.name"/></a>
+                <g:link controller="admin" action="index" class="navbar-brand"><g:message code="app.name"/></g:link>
             </div>
             <div class="collapse navbar-collapse" id="mobile">
                 <ul class="nav navbar-nav">

@@ -4,8 +4,8 @@ import grails.transaction.Transactional
 
 class PageController {
 
-    def show(String url) {
-        [page: Page.findByUrl(url)]
+    def show(Page page) {
+        [page: page]
     }
 
     @Transactional

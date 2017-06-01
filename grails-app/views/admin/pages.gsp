@@ -18,11 +18,13 @@
                             ${it.h1}
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-9">
-                            <g:link controller="page" action="show" params="[url: it.url]"
-                                    class="btn btn-primary"><g:message code="page.see"/></g:link>
-                            <button class="btn btn-primary" data-toggle="modal"
-                                    data-target="#update-page-${it.id}"><g:message
-                                    code="pages.update"/></button>
+                            <div style="float: right">
+                                <g:link controller="page" action="show" id="${it.id}"
+                                        class="btn btn-primary"><g:message code="page.see"/></g:link>
+                                <button class="btn btn-primary" data-toggle="modal"
+                                        data-target="#update-page-${it.id}"><g:message
+                                        code="pages.update"/></button>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -63,23 +65,25 @@
     </div>
 </div>
 <g:each in="${pages}">
-    <div class="modal fade" id="create-page" role="dialog" aria-labelledby="create-page-label">
+    <div class="modal fade" id="update-page-${it.id}" role="dialog" aria-labelledby="update-page-${it.id}-label">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="update-page-label"><g:message code="pages.create"/></h4>
+                    <h4 class="modal-title" id="update-page-${it.id}-label"><g:message code="pages.create"/></h4>
                 </div>
                 <g:form controller="page" action="doUpdate" id="${it.id}">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="h1-update-${it.id}"><g:message code="pages.h1"/></label>
-                            <input class="form-control" type="text" id="h1-update-${it.id}" name="h1" required value="${it.h1}"/>
+                            <input class="form-control" type="text" id="h1-update-${it.id}" name="h1" required
+                                   value="${it.h1}"/>
                         </div>
                         <div class="form-group">
                             <label for="url-update-${it.id}"><g:message code="pages.url"/></label>
-                            <input class="form-control" type="text" id="url-update-${it.id}" name="url" required value="${it.url}"/>
+                            <input class="form-control" type="text" id="url-update-${it.id}" name="url" required
+                                   value="${it.url}"/>
                         </div>
                         <div class="form-group">
                             <label for="content-update-${it.id}"><g:message code="pages.content"/></label>
@@ -87,7 +91,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <input type="submit" class="btn btn-primary" value="<g:message code="shared.save"/>"/>
+                        <g:link controller="page" action="doDelete" id="${it.id}" class="btn btn-danger"><g:message
+                                code="shared.delete"/></g:link>
+                        <input type="submit" class="btn btn-primary" value="<g:message code="shared.update"/>"/>
                     </div>
                 </g:form>
             </div>
