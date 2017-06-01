@@ -7,7 +7,7 @@ class AdminController {
     }
 
     def pages() {
-        [pages: Page.listOrderById(params)]
+        [pages: Page.listOrderByMenuOrder(params)]
     }
 
 }
