@@ -28,6 +28,7 @@
             </div>
             <div class="collapse navbar-collapse" id="mobile">
                 <ul class="nav navbar-nav">
+                    <li><g:link controller="admin" action="notices"><g:message code="menus.notices"/></g:link></li>
                     <li><g:link controller="admin" action="pages"><g:message code="menus.pages"/></g:link></li>
                 </ul>
             </div>

@@ -25,10 +25,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><g:message code="app.name"/></a>
+                <g:link url="/" class="navbar-brand"><g:message code="app.name"/></g:link>
             </div>
             <div class="collapse navbar-collapse" id="mobile">
                 <ul class="nav navbar-nav">
+                    <li><g:link controller="notice" action="index"><g:message code="notices"/></g:link></li>
                     <g:each in="${Page.listOrderByMenuOrder(params as Map)}">
                         <li><g:link controller="page" action="show" id="${it.id}">${it.h1}</g:link></li>
                     </g:each>

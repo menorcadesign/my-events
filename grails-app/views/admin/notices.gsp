@@ -10,23 +10,23 @@
 <body>
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#create-page"><g:message
-                code="pages.create"/></button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#create-notice"><g:message
+                code="notices.create"/></button>
         <hr>
-        <ul class="list-group">
-            <g:each in="${pages}">
+        <ul>
+            <g:each in="${notices}">
                 <li class="list-group-item">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                            ${it.h1}
+                            ${it.title}
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-9">
                             <div style="float: right">
-                                <g:link controller="page" action="show" id="${it.id}"
-                                        class="btn btn-primary" target="_blank"><g:message code="pages.see"/></g:link>
+                                <g:link controller="notice" action="show" id="${it.id}"
+                                        class="btn btn-primary" target="_blank"><g:message code="notices.see"/></g:link>
                                 <button class="btn btn-primary" data-toggle="modal"
-                                        data-target="#update-page-${it.id}"><g:message
-                                        code="pages.update"/></button>
+                                        data-target="#update-notice-${it.id}"><g:message
+                                        code="notices.update"/></button>
                             </div>
                         </div>
                     </div>
@@ -35,26 +35,22 @@
         </ul>
     </div>
 </div>
-<div class="modal fade" id="create-page" role="dialog" aria-labelledby="create-page-label">
+<div class="modal fade" id="create-notice" role="dialog" aria-labelledby="create-notice-label">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="create-page-label"><g:message code="pages.create"/></h4>
+                <h4 class="modal-title" id="create-notice-label"><g:message code="notices.create"/></h4>
             </div>
-            <g:form controller="page" action="doInsert">
+            <g:form controller="notice" action="doInsert">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="h1"><g:message code="pages.h1"/></label>
-                        <input class="form-control" type="text" id="h1" name="h1" required/>
+                        <label for="title"><g:message code="notices.title"/></label>
+                        <input class="form-control" type="text" id="title" name="title" required/>
                     </div>
                     <div class="form-group">
-                        <label for="url"><g:message code="pages.url"/></label>
-                        <input class="form-control" type="text" id="url" name="url" required/>
-                    </div>
-                    <div class="form-group">
-                        <label for="content"><g:message code="pages.content"/></label>
+                        <label for="content"><g:message code="notices.content"/></label>
                         <textarea id="content" name="content"></textarea>
                     </div>
                 </div>
@@ -65,36 +61,30 @@
         </div>
     </div>
 </div>
-<g:each in="${pages}">
-    <div class="modal fade" id="update-page-${it.id}" role="dialog" aria-labelledby="update-page-${it.id}-label">
+<g:each in="${notices}">
+    <div class="modal fade" id="update-notice-${it.id}" role="dialog" aria-labelledby="update-notice-${it.id}-label">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="update-page-${it.id}-label"><g:message code="pages.create"/></h4>
+                    <h4 class="modal-title" id="update-notice-${it.id}-label"><g:message code="notices.update"/></h4>
                 </div>
-                <g:form controller="page" action="doUpdate" id="${it.id}">
+                <g:form controller="notice" action="doInsert">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="h1-update-${it.id}"><g:message code="pages.h1"/></label>
-                            <input class="form-control" type="text" id="h1-update-${it.id}" name="h1" required
-                                   value="${it.h1}"/>
+                            <label for="title-${it.id}"><g:message code="notices.title"/></label>
+                            <input class="form-control" type="text" id="title-${it.id}" name="title" required value="${it.title}"/>
                         </div>
                         <div class="form-group">
-                            <label for="url-update-${it.id}"><g:message code="pages.url"/></label>
-                            <input class="form-control" type="text" id="url-update-${it.id}" name="url" required
-                                   value="${it.url}"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="content-update-${it.id}"><g:message code="pages.content"/></label>
-                            <textarea id="content-update-${it.id}" name="content">${it.content}</textarea>
+                            <label for="content-${it.id}"><g:message code="notices.content"/></label>
+                            <textarea id="content-${it.id}" name="content">${it.content}</textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <g:link controller="page" action="doDelete" id="${it.id}" class="btn btn-danger"><g:message
+                        <g:link controller="notice" action="doDelete" id="${it.id}" class="btn btn-danger"><g:message
                                 code="shared.delete"/></g:link>
-                        <input type="submit" class="btn btn-primary" value="<g:message code="shared.update"/>"/>
+                        <input type="submit" class="btn btn-primary" value="<g:message code="shared.save"/>"/>
                     </div>
                 </g:form>
             </div>
