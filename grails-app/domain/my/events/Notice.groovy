@@ -14,4 +14,8 @@ class Notice {
         content type: 'text'
     }
 
+    String noHtmlContent() {
+        content.replaceAll('<[^>]*>', '')
+    }
+
 }

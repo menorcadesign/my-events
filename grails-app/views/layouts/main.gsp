@@ -29,6 +29,7 @@
             </div>
             <div class="collapse navbar-collapse" id="mobile">
                 <ul class="nav navbar-nav">
+                    <li><g:link controller="notice" action="index"><g:message code="notices"/></g:link></li>
                     <g:each in="${Page.listOrderByMenuOrder(params as Map)}">
                         <li><g:link controller="page" action="show" id="${it.id}">${it.h1}</g:link></li>
                     </g:each>

@@ -10,6 +10,9 @@
 <body>
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#create-page"><g:message
+                code="pages.create"/></button>
+        <hr>
         <ul class="list-group">
             <g:each in="${pages}">
                 <li class="list-group-item">
@@ -30,8 +33,6 @@
                 </li>
             </g:each>
         </ul>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#create-page"><g:message
-                code="pages.create"/></button>
     </div>
 </div>
 <div class="modal fade" id="create-page" role="dialog" aria-labelledby="create-page-label">
